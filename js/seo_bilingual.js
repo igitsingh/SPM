@@ -1,0 +1,20 @@
+export const bilingualBlurbs = {
+    "Akshar Sumanga": "‘अक्षर सुमंगा’ NEP आधारित प्राइमरी हिंदी पुस्तक है जो बच्चों को खेल-खेल में वर्णमाला सिखाती है। रंगीन चित्र और सरल शब्द इसे नर्सरी के लिए बेहतरीन बनाते हैं। | This NEP-aligned Hindi alphabet book introduces kids to letters through colorful visuals and phonics, building a strong foundation.",
+    "Shabd Sumanga": "बिना मात्रा वाले शब्दों का सरल ज्ञान! ‘शब्द सुमंगा’ बच्चों को अक्षरों को जोड़कर शब्द बनाना सिखाती है। | Teaches word formation without matras. Perfect for transitioning from letters to words in Hindi.",
+    "Swar Sumanga": "मात्राओं का ज्ञान अब हुआ आसान। ‘स्वर सुमंगा’ हिंदी पढ़ने की यात्रा में एक अहम पड़ाव है। | Master Hindi vowels (Matras) easily. Essential for developing reading fluency in primary school kids.",
+    "Sumanga": "कक्षा 1 से 5 के लिए रोचक कहानियों और कविताओं का संग्रह। यह सीरीज़ बच्चों में साहित्य के प्रति रुचि जगाती है। | A comprehensive Hindi literature series for Class 1-5, featuring engaging stories and poems that foster a love for the language.",
+    "Hindi Vyakaran": "व्याकरण को रटना नहीं, समझना है। सरल परिभाषाएं और उदाहरण। | Grammar made simple, not rote. Easy definitions and examples for Class 1-5 students.",
+    "My ABC Book": "A vibrant picture book for alphabet recognition. बच्चों का पहला इंग्लिश साथी। | Foundational English book for toddlers with large, clear illustrations.",
+    "Tulip": "Stories that inspire! Our English Readers focus on vocabulary, comprehension, and values. | शब्दावली और समझ बढ़ाने के लिए बेहतरीन कहानियां। NEP आधारित पाठ्यक्रम।",
+    "English Writing": "Perfect strokes for perfect handwriting. Cursive and print writing practice books. | सुंदर लिखावट के लिए अभ्यास पुस्तिका। कर्सिव और प्रिंट राइटिंग में उपलब्ध.",
+    "English Grammar": "From basics to sentence formation. A structural approach to English Grammar. | ग्रामर और ट्रांसलेशन का सही मिश्रण, जो बच्चों को इंग्लिश बोलने और लिखने में मदद करता है.",
+    "Devvani": "संस्कृत - हमारी संस्कृति। देववाणी सीरीज़ संस्कृत को आधुनिक संदर्भ में बहुत ही सरल तरीके से प्रस्तुत करती है। | Introducing Sanskrit in a modern, simplified context. Preserving culture while teaching language skills.",
+    "Table Book": "Master numbers and tables effortlessly. The building blocks of mathematics. | गिनती और पहाड़े याद करने का मज़ेदार तरीका।",
+    "Number Book": "Master numbers and tables effortlessly. The building blocks of mathematics. | गिनती और पहाड़े याद करने का मज़ेदार तरीका।",
+    "Math": "Concept-based learning. From basic counting to complex problem solving, aligned with global standards. | रटना नहीं, समझना। गणित के डर को दूर भगाएं।",
+    "Samaj Evam Paryavaran": "Connecting kids to their surroundings. Social studies and environmental awareness combined. | बच्चों को उनके परिवेश और समाज से जोड़ने वाली पुस्तकें।",
+    "Vigyan Darpan": "Science through experiments and observation. Encouraging scientific temper in young minds. | प्रयोग और निरीक्षण के माध्यम से विज्ञान सीखें।",
+    "Naitik Shiksha": "Knowledge + Values. Creating smart and responsible citizens. | सामान्य ज्ञान के साथ-साथ संस्कारों की भी शिक्षा।",
+    "Fifty-Fifty Rhymes": "Sing, dance, and learn! A collection of popular rhymes in Hindi and English. | हिंदी और अंग्रेज़ी कविताओं का अनूठा संग्रह।",
+    "Kids 'n' Colours": "Unleash creativity. Coloring and craft books that improve motor skills. | बच्चों की रचनात्मकता को उड़ान दें।"
+};

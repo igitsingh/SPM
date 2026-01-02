@@ -1,0 +1,475 @@
+{
+    "catalogue": [
+        {
+            "category": "Hindi",
+            "books": [
+                {
+                    "code": "J035",
+                    "title": "वारिधि (हिंदी की पाठ्य पुस्तक)-1",
+                    "class": 1,
+                    "price": 280,
+                    "image": "/public/images/books/waridhi_1.png"
+                },
+                {
+                    "code": "J036",
+                    "title": "वारिधि (हिंदी की पाठ्य पुस्तक)-2",
+                    "class": 2,
+                    "price": 300,
+                    "image": "/public/images/books/waridhi_2.png"
+                },
+                {
+                    "code": "J037",
+                    "title": "वारिधि (हिंदी की पाठ्य पुस्तक)-3",
+                    "class": 3,
+                    "price": 315,
+                    "image": "/public/images/books/waridhi_3.png"
+                },
+                {
+                    "code": "J038",
+                    "title": "वारिधि (हिंदी की पाठ्य पुस्तक)-4",
+                    "class": 4,
+                    "price": 330,
+                    "image": "/public/images/books/waridhi_4.png"
+                },
+                {
+                    "code": "J039",
+                    "title": "वारिधि (हिंदी की पाठ्य पुस्तक)-5",
+                    "class": 5,
+                    "price": 350,
+                    "image": "/public/images/books/waridhi_5.png"
+                }
+            ]
+        },
+        {
+            "category": "Grammar (Hindi)",
+            "books": [
+                {
+                    "code": "J040",
+                    "title": "अर्व्तिका (व्याकरण की पाठ्य पुस्तक)-1",
+                    "class": 1,
+                    "price": 280
+                },
+                {
+                    "code": "J041",
+                    "title": "अर्व्तिका (व्याकरण की पाठ्य पुस्तक)-2",
+                    "class": 2,
+                    "price": 300,
+                    "image": "/public/images/books/avantika_2.png"
+                },
+                {
+                    "code": "J042",
+                    "title": "अर्व्तिका (व्याकरण की पाठ्य पुस्तक)-3",
+                    "class": 3,
+                    "price": 315
+                },
+                {
+                    "code": "J043",
+                    "title": "अर्व्तिका (व्याकरण की पाठ्य पुस्तक)-4",
+                    "class": 4,
+                    "price": 330
+                },
+                {
+                    "code": "J044",
+                    "title": "अर्व्तिका (व्याकरण की पाठ्य पुस्तक)-5",
+                    "class": 5,
+                    "price": 350
+                }
+            ]
+        },
+        {
+            "category": "English Reader",
+            "books": [
+                {
+                    "code": "J045",
+                    "title": "Daisy (English Reader)-1",
+                    "class": 1,
+                    "price": 280
+                },
+                {
+                    "code": "J046",
+                    "title": "Daisy (English Reader)-2",
+                    "class": 2,
+                    "price": 300,
+                    "image": "/public/images/books/daisy_2.png"
+                },
+                {
+                    "code": "J047",
+                    "title": "Daisy (English Reader)-3",
+                    "class": 3,
+                    "price": 315
+                },
+                {
+                    "code": "J048",
+                    "title": "Daisy (English Reader)-4",
+                    "class": 4,
+                    "price": 330
+                },
+                {
+                    "code": "J049",
+                    "title": "Daisy (English Reader)-5",
+                    "class": 5,
+                    "price": 350
+                }
+            ]
+        },
+        {
+            "category": "Science",
+            "books": [
+                {
+                    "code": "J050",
+                    "title": "Universe – Introductory",
+                    "class": 0,
+                    "price": 230
+                },
+                {
+                    "code": "J051",
+                    "title": "Universe-1",
+                    "class": 1,
+                    "price": 280
+                },
+                {
+                    "code": "J052",
+                    "title": "Universe-2",
+                    "class": 2,
+                    "price": 300
+                },
+                {
+                    "code": "J053",
+                    "title": "Universe-3",
+                    "class": 3,
+                    "price": 320
+                },
+                {
+                    "code": "J054",
+                    "title": "Universe-4",
+                    "class": 4,
+                    "price": 335
+                },
+                {
+                    "code": "J055",
+                    "title": "Universe-5",
+                    "class": 5,
+                    "price": 350
+                }
+            ]
+        },
+        {
+            "category": "Social Studies",
+            "books": [
+                {
+                    "code": "J056",
+                    "title": "Landmark – Introductory",
+                    "class": 0,
+                    "price": 235
+                },
+                {
+                    "code": "J057",
+                    "title": "Landmark-1",
+                    "class": 1,
+                    "price": 280,
+                    "image": "/public/images/books/landmark_1.png"
+                },
+                {
+                    "code": "J058",
+                    "title": "Landmark-2",
+                    "class": 2,
+                    "price": 300
+                },
+                {
+                    "code": "J059",
+                    "title": "Landmark-3",
+                    "class": 3,
+                    "price": 315
+                },
+                {
+                    "code": "J060",
+                    "title": "Landmark-4",
+                    "class": 4,
+                    "price": 330
+                },
+                {
+                    "code": "J061",
+                    "title": "Landmark-5",
+                    "class": 5,
+                    "price": 360
+                }
+            ]
+        },
+        {
+            "category": "Environmental Studies",
+            "books": [
+                {
+                    "code": "J062",
+                    "title": "Learnwell – Introductory",
+                    "class": 0,
+                    "price": 240
+                },
+                {
+                    "code": "J063",
+                    "title": "Learnwell-1",
+                    "class": 1,
+                    "price": 280
+                },
+                {
+                    "code": "J064",
+                    "title": "Learnwell-2",
+                    "class": 2,
+                    "price": 300,
+                    "image": "/public/images/books/learnwell_2.png"
+                },
+                {
+                    "code": "J065",
+                    "title": "Learnwell-3",
+                    "class": 3,
+                    "price": 330
+                },
+                {
+                    "code": "J066",
+                    "title": "Learnwell-4",
+                    "class": 4,
+                    "price": 350
+                },
+                {
+                    "code": "J067",
+                    "title": "Learnwell-5",
+                    "class": 5,
+                    "price": 370
+                }
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "books": [
+                {
+                    "code": "J068",
+                    "title": "Quiz – Introductory",
+                    "class": 0,
+                    "price": 170
+                },
+                {
+                    "code": "J069",
+                    "title": "Quiz-1",
+                    "class": 1,
+                    "price": 180
+                },
+                {
+                    "code": "J070",
+                    "title": "Quiz-2",
+                    "class": 2,
+                    "price": 190
+                },
+                {
+                    "code": "J071",
+                    "title": "Quiz-3",
+                    "class": 3,
+                    "price": 210
+                },
+                {
+                    "code": "J072",
+                    "title": "Quiz-4",
+                    "class": 4,
+                    "price": 225
+                },
+                {
+                    "code": "J073",
+                    "title": "Quiz-5",
+                    "class": 5,
+                    "price": 240
+                }
+            ]
+        },
+        {
+            "category": "Moral Education",
+            "books": [
+                {
+                    "code": "J074",
+                    "title": "Moral Stories-1",
+                    "class": 1,
+                    "price": 180
+                },
+                {
+                    "code": "J075",
+                    "title": "Moral Stories-2",
+                    "class": 2,
+                    "price": 192
+                },
+                {
+                    "code": "J076",
+                    "title": "Moral Stories-3",
+                    "class": 3,
+                    "price": 210
+                },
+                {
+                    "code": "J077",
+                    "title": "Moral Stories-4",
+                    "class": 4,
+                    "price": 220
+                },
+                {
+                    "code": "J078",
+                    "title": "Moral Stories-5",
+                    "class": 5,
+                    "price": 230
+                }
+            ]
+        },
+        {
+            "category": "Mathematics",
+            "books": [
+                {
+                    "code": "J079",
+                    "title": "Matrix-1",
+                    "class": 1,
+                    "price": 425
+                },
+                {
+                    "code": "J080",
+                    "title": "Matrix-2",
+                    "class": 2,
+                    "price": 465
+                },
+                {
+                    "code": "J081",
+                    "title": "Matrix-3",
+                    "class": 3,
+                    "price": 475
+                },
+                {
+                    "code": "J082",
+                    "title": "Matrix-4",
+                    "class": 4,
+                    "price": 490
+                },
+                {
+                    "code": "J083",
+                    "title": "Matrix-5",
+                    "class": 5,
+                    "price": 495
+                }
+            ]
+        },
+        {
+            "category": "Drawing",
+            "books": [
+                {
+                    "code": "J084",
+                    "title": "Colors-A",
+                    "class": 0,
+                    "price": 175
+                },
+                {
+                    "code": "J085",
+                    "title": "Colors-B",
+                    "class": 0,
+                    "price": 175
+                },
+                {
+                    "code": "J086",
+                    "title": "Colors-C",
+                    "class": 0,
+                    "price": 175
+                },
+                {
+                    "code": "J087",
+                    "title": "Colors-1",
+                    "class": 1,
+                    "price": 175
+                },
+                {
+                    "code": "J088",
+                    "title": "Colors-2",
+                    "class": 2,
+                    "price": 175
+                },
+                {
+                    "code": "J089",
+                    "title": "Colors-3",
+                    "class": 3,
+                    "price": 180
+                },
+                {
+                    "code": "J090",
+                    "title": "Colors-4",
+                    "class": 4,
+                    "price": 180
+                },
+                {
+                    "code": "J091",
+                    "title": "Colors-5",
+                    "class": 5,
+                    "price": 180
+                }
+            ]
+        },
+        {
+            "category": "English Grammar",
+            "books": [
+                {
+                    "code": "J092",
+                    "title": "English Grammar-1",
+                    "class": 1,
+                    "price": 280
+                },
+                {
+                    "code": "J093",
+                    "title": "English Grammar-2",
+                    "class": 2,
+                    "price": 300
+                },
+                {
+                    "code": "J094",
+                    "title": "English Grammar-3",
+                    "class": 3,
+                    "price": 325
+                },
+                {
+                    "code": "J095",
+                    "title": "English Grammar-4",
+                    "class": 4,
+                    "price": 340
+                },
+                {
+                    "code": "J096",
+                    "title": "English Grammar-5",
+                    "class": 5,
+                    "price": 365
+                }
+            ]
+        },
+        {
+            "category": "Computer",
+            "books": [
+                {
+                    "code": "J097",
+                    "title": "Computer App-1",
+                    "class": 1,
+                    "price": 270
+                },
+                {
+                    "code": "J098",
+                    "title": "Computer App-2",
+                    "class": 2,
+                    "price": 285
+                },
+                {
+                    "code": "J099",
+                    "title": "Computer App-3",
+                    "class": 3,
+                    "price": 295
+                },
+                {
+                    "code": "J100",
+                    "title": "Computer App-4",
+                    "class": 4,
+                    "price": 310
+                },
+                {
+                    "code": "J101",
+                    "title": "Computer App-5",
+                    "class": 5,
+                    "price": 325
+                }
+            ]
+        }
+    ]
+}
