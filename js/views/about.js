@@ -1,124 +1,25 @@
 export function renderAbout() {
     return `
-        <!-- Hero / Title Section -->
-        <div class="hero" style="background: #fdf6e3; padding: 100px 0;">
-            <div class="container text-center">
-                <span style="color: #8b5a2b; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Our Story</span>
-                <h1 style="font-family: 'Georgia', serif; font-size: 3.5rem; color: #3e2723; margin-top: 20px;">
+        <!-- Hero / Title Section --><div class="hero" style="background: #fdf6e3; padding: 100px 0;"><div class="container text-center"><span style="color: #8b5a2b; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Our Story</span><h1 style="font-family: 'Georgia', serif; font-size: 3.5rem; color: #3e2723; margin-top: 20px;">
                     A Legacy Built on Words,<br>Courage, and Determination
-                </h1>
-            </div>
-        </div>
-
-        <!-- Section 1: The Beginning -->
-        <div class="section container">
-            <div class="grid" style="grid-template-columns: 1fr; gap: 40px; max-width: 800px; margin: 0 auto; text-align: center;">
-                <div>
-                    <h2 style="font-family: 'Georgia', serif; color: #5d4037; margin-bottom: 24px;">The Beginning</h2>
-                    <p style="font-size: 1.25rem; line-height: 1.8; color: #4e342e;">
+                </h1></div></div><!-- Section 1: The Beginning --><div class="section container"><div class="grid" style="grid-template-columns: 1fr; gap: 40px; max-width: 800px; margin: 0 auto; text-align: center;"><div><h2 style="font-family: 'Georgia', serif; color: #5d4037; margin-bottom: 24px;">The Beginning</h2><p style="font-size: 1.25rem; line-height: 1.8; color: #4e342e;">
                         Suman Prakashan Mandir was born out of a dream—one man’s unshakeable belief that books could change lives.
                         Our founder, <strong>Late Shri [Founder's Name]</strong>, started this journey in a time of struggle, when resources were few but hope was abundant.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section 2: The Struggle Story with Image -->
-        <div class="section" style="background: #efebe9; padding: 80px 0;">
-            <div class="container grid" style="grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-                <div>
-                     <!-- Placeholder for Old Image -->
-                    <div style="background: #d7ccc8; height: 400px; border-radius: 8px; display: flex; align-items: center; justify-content: center; filter: sepia(0.6);">
-                        <span style="font-size: 4rem; opacity: 0.5;">🎞️</span>
-                    </div>
-                </div>
-                <div>
-                    <h2 style="font-family: 'Georgia', serif; color: #5d4037; margin-bottom: 24px;">A Journey of Resilience</h2>
-                    <p style="font-size: 1.15rem; line-height: 1.8; color: #4e342e; margin-bottom: 20px;">
+                    </p></div></div></div><!-- Section 2: The Struggle Story with Image --><div class="section" style="background: #efebe9; padding: 80px 0;"><div class="container grid" style="grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;"><div><!-- Placeholder for Old Image --><div style="background: #d7ccc8; height: 400px; border-radius: 8px; display: flex; align-items: center; justify-content: center; filter: sepia(0.6);"><span style="font-size: 4rem; opacity: 0.5;">️</span></div></div><div><h2 style="font-family: 'Georgia', serif; color: #5d4037; margin-bottom: 24px;">A Journey of Resilience</h2><p style="font-size: 1.15rem; line-height: 1.8; color: #4e342e; margin-bottom: 20px;">
                         He began with nothing more than a small table, a borrowed typewriter, and a heart full of ambition.
                         Days were long. Nights were longer.
                         But he kept going — because education mattered, because children deserved books, and because he believed every family should have access to learning.
-                    </p>
-                    <p style="font-size: 1.15rem; line-height: 1.8; color: #4e342e; font-style: italic;">
+                    </p><p style="font-size: 1.15rem; line-height: 1.8; color: #4e342e; font-style: italic;">
                         “Those early years were not easy. But every challenge carved the identity of Suman Prakashan Mandir — a publishing house built not on profit, but on purpose.”
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section 3: The Legacy -->
-        <div class="section container text-center" style="padding: 100px 0;">
-            <h2 style="font-family: 'Georgia', serif; color: #3e2723; margin-bottom: 30px; font-size: 2.5rem;">A Legacy that Lives On</h2>
-            <div style="max-width: 800px; margin: 0 auto;">
-                <p style="font-size: 1.25rem; line-height: 1.8; color: #5d4037; margin-bottom: 24px;">
+                    </p></div></div></div><!-- Section 3: The Legacy --><div class="section container text-center" style="padding: 100px 0;"><h2 style="font-family: 'Georgia', serif; color: #3e2723; margin-bottom: 30px; font-size: 2.5rem;">A Legacy that Lives On</h2><div style="max-width: 800px; margin: 0 auto;"><p style="font-size: 1.25rem; line-height: 1.8; color: #5d4037; margin-bottom: 24px;">
                     His dedication shaped generations. Today, Suman Prakashan Mandir stands not merely as a business, but as a legacy of honesty, hard work, dignity, and knowledge.
-                </p>
-                <p style="font-size: 1.25rem; line-height: 1.8; color: #5d4037;">
+                </p><p style="font-size: 1.25rem; line-height: 1.8; color: #5d4037;">
                     A legacy carried forward by the next generations of our family, who strive to honor his principles in everything we publish.
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 4: Old Photos Gallery -->
-        <div class="section" style="background: #3e2723; padding: 80px 0; color: white;">
-            <div class="container">
-                <h2 class="text-center" style="font-family: 'Georgia', serif; margin-bottom: 60px; color: #d7ccc8;">Glimpses of Our Heritage</h2>
-                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-                    <div style="height: 250px; background: #5d4037; border-radius: 4px; display: flex; align-items: center; justify-content: center; filter: sepia(0.8);">
-                        <span style="opacity: 0.7;">Old Shop Photo</span>
-                    </div>
-                    <div style="height: 250px; background: #5d4037; border-radius: 4px; display: flex; align-items: center; justify-content: center; filter: sepia(0.8);">
-                        <span style="opacity: 0.7;">Founder’s Portrait</span>
-                    </div>
-                    <div style="height: 250px; background: #5d4037; border-radius: 4px; display: flex; align-items: center; justify-content: center; filter: sepia(0.8);">
-                        <span style="opacity: 0.7;">Early Printing Press</span>
-                    </div>
-                    <div style="height: 250px; background: #5d4037; border-radius: 4px; display: flex; align-items: center; justify-content: center; filter: sepia(0.8);">
-                        <span style="opacity: 0.7;">The Family</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section 5: What SPM Stands For Today -->
-        <div class="section container">
-            <h2 class="text-center" style="font-family: 'Georgia', serif; margin-bottom: 60px; font-size: 2.5rem; color: #3e2723;">What Suman Prakashan Mandir Stands For</h2>
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center;">
-                <div class="card" style="border: 2px solid #efebe9;">
-                    <div style="font-size: 3rem; margin-bottom: 16px;">📚</div>
-                    <h3 style="color: #5d4037;">Authentic Education</h3>
-                    <p style="color: #795548;">Books rooted in values and true learning.</p>
-                </div>
-                <div class="card" style="border: 2px solid #efebe9;">
-                    <div style="font-size: 3rem; margin-bottom: 16px;">💰</div>
-                    <h3 style="color: #5d4037;">Affordable Access</h3>
-                    <p style="color: #795548;">Quality education within everyone's reach.</p>
-                </div>
-                <div class="card" style="border: 2px solid #efebe9;">
-                    <div style="font-size: 3rem; margin-bottom: 16px;">🤝</div>
-                    <h3 style="color: #5d4037;">Rooted in Trust</h3>
-                    <p style="color: #795548;">A publishing home you can rely on.</p>
-                </div>
-                <div class="card" style="border: 2px solid #efebe9;">
-                    <div style="font-size: 3rem; margin-bottom: 16px;">👨‍👩‍👧‍👦</div>
-                    <h3 style="color: #5d4037;">Family Legacy</h3>
-                    <p style="color: #795548;">Multi-generational commitment to service.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section 6: The Promise Forward -->
-        <div class="section" style="background: #fdf6e3; padding: 100px 0;">
-            <div class="container text-center" style="max-width: 800px;">
-                <h2 style="font-family: 'Georgia', serif; font-size: 2.5rem; color: #3e2723; margin-bottom: 30px;">The Promise Forward</h2>
-                <p style="font-size: 1.5rem; line-height: 1.6; color: #5d4037; font-style: italic;">
+                </p></div></div><!-- Section 4: Old Photos Gallery --><div class="section" style="background: #3e2723; padding: 80px 0; color: white;"><div class="container"><h2 class="text-center" style="font-family: 'Georgia', serif; margin-bottom: 60px; color: #d7ccc8;">Glimpses of Our Heritage</h2><div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;"><div style="height: 250px; background: #5d4037; border-radius: 4px; display: flex; align-items: center; justify-content: center; filter: sepia(0.8);"><span style="opacity: 0.7;">Old Shop Photo</span></div><div style="height: 250px; background: #5d4037; border-radius: 4px; display: flex; align-items: center; justify-content: center; filter: sepia(0.8);"><span style="opacity: 0.7;">Founder’s Portrait</span></div><div style="height: 250px; background: #5d4037; border-radius: 4px; display: flex; align-items: center; justify-content: center; filter: sepia(0.8);"><span style="opacity: 0.7;">Early Printing Press</span></div><div style="height: 250px; background: #5d4037; border-radius: 4px; display: flex; align-items: center; justify-content: center; filter: sepia(0.8);"><span style="opacity: 0.7;">The Family</span></div></div></div></div><!-- Section 5: What SPM Stands For Today --><div class="section container"><h2 class="text-center" style="font-family: 'Georgia', serif; margin-bottom: 60px; font-size: 2.5rem; color: #3e2723;">What Suman Prakashan Mandir Stands For</h2><div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center;"><div class="card" style="border: 2px solid #efebe9;"><div style="font-size: 3rem; margin-bottom: 16px;"></div><h3 style="color: #5d4037;">Authentic Education</h3><p style="color: #795548;">Books rooted in values and true learning.</p></div><div class="card" style="border: 2px solid #efebe9;"><div style="font-size: 3rem; margin-bottom: 16px;"></div><h3 style="color: #5d4037;">Affordable Access</h3><p style="color: #795548;">Quality education within everyone's reach.</p></div><div class="card" style="border: 2px solid #efebe9;"><div style="font-size: 3rem; margin-bottom: 16px;"></div><h3 style="color: #5d4037;">Rooted in Trust</h3><p style="color: #795548;">A publishing home you can rely on.</p></div><div class="card" style="border: 2px solid #efebe9;"><div style="font-size: 3rem; margin-bottom: 16px;">‍‍‍</div><h3 style="color: #5d4037;">Family Legacy</h3><p style="color: #795548;">Multi-generational commitment to service.</p></div></div></div><!-- Section 6: The Promise Forward --><div class="section" style="background: #fdf6e3; padding: 100px 0;"><div class="container text-center" style="max-width: 800px;"><h2 style="font-family: 'Georgia', serif; font-size: 2.5rem; color: #3e2723; margin-bottom: 30px;">The Promise Forward</h2><p style="font-size: 1.5rem; line-height: 1.6; color: #5d4037; font-style: italic;">
                     “As we continue to grow, our mission remains unchanged:
                     To honour our grandfather’s dream by spreading knowledge, nurturing young minds, and keeping the flame of learning alive for generations to come.”
-                </p>
-                <div style="margin-top: 40px; font-family: 'Georgia', serif; font-size: 1.2rem; color: #8b5a2b;">
+                </p><div style="margin-top: 40px; font-family: 'Georgia', serif; font-size: 1.2rem; color: #8b5a2b;">
                     — The Suman Prakashan Mandir Family
-                </div>
-            </div>
-        </div>
+                </div></div></div>
     `;
 }

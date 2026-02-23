@@ -21,8 +21,8 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
-  // Backend runs on 3002 to avoid conflict
-  await app.listen(3002);
-  console.log('Application is running on: http://localhost:3002/api');
+  // Backend runs on 4001 to avoid conflict
+  await app.listen(4001);
+  console.log('Application is running on: http://localhost:4001/api');
 }
 bootstrap();

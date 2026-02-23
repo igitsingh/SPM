@@ -148,7 +148,8 @@ export function canAccessRoute(path) {
         '/business-opportunity',
         '/new-schools',
         '/distributors',
-        '/video-library'
+        '/video-library',
+        '/forbusiness'
     ];
 
     if (publicRoutes.includes(path)) {

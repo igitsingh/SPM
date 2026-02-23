@@ -1,8 +1,8 @@
 // SPM Backend Schema - SQLite Version (Fallback)
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 generator client {
@@ -70,6 +70,7 @@ model Book {
   subject      String?
   category     String?
   board        String?
+  unit         String?  @default("Aroma") // Aroma, Bluemoon, Deepanshu, Disney, Harmony, Pearl
   coverImage   String?
   priceRetail  Decimal
   pricePartner Decimal

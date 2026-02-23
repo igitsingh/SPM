@@ -2,7 +2,7 @@ import { Router } from './router.js';
 import { store } from './store.js';
 
 // Views
-import { renderHome } from './views/home.js';
+import { renderHome, initHome } from './views/home.js';
 import { renderCatalogue } from './views/catalogue.js';
 import { renderOrder } from './views/order.js';
 import { renderAbout } from './views/about.js';
@@ -22,9 +22,10 @@ import { renderStudentOrders } from './views/students/orders.js';
 import { renderBusinessLanding } from './views/landing/business.js';
 import { renderSchoolsLanding } from './views/landing/schools.js';
 import { renderDistributorsLanding } from './views/landing/distributors.js';
+import { renderForBusiness } from './views/for-business.js';
 
 // Components
-import { renderHeader, initHeader } from './components/header.js';
+import { renderHeader, initHeader } from './components/header_v2.js';
 import { renderFooter } from './components/footer.js';
 import { initFlyout } from './components/flyout.v2.js';
 import { renderAdminLayout } from './components/admin-layout.js';
@@ -53,7 +54,7 @@ import { renderOrderHistory } from './views/partner/orders-history.js';
 
 // Define Routes
 const routes = {
-    '/': renderHome,
+    '/': async () => { const html = await renderHome(); return html; },
     '/video-library': renderVideoLibrary,
     '/login': renderLogin,
     '/admin/login': renderAdminLogin,
@@ -99,6 +100,7 @@ const routes = {
     '/order-school': () => renderOrder('school'),
     '/order-distributor': () => renderOrder('distributor'),
 
+    '/forbusiness': renderForBusiness,
     '/business-opportunity': renderBusinessLanding,
     '/new-schools': renderSchoolsLanding,
     '/distributors': renderDistributorsLanding,
@@ -141,21 +143,18 @@ document.addEventListener('DOMContentLoaded', () => {
         initHeader();
 
         // Visibility Logic
-        // 1. Header: Hide on all Portal Apps AND Business Landing Pages
+        // 1. Header: Hide only on Admin and Partner Dashboards
         const shouldHideHeader = path === '/dashboard' ||
             path.startsWith('/partner/') ||
-            path.startsWith('/admin') || // Changed to startWith /admin to cover /admin/ and /admin
+            path.startsWith('/admin') ||
             path === '/portal-select' ||
-            path === '/business-opportunity' ||
-            path === '/distributors' ||
-            path === '/new-schools' ||
-            path === '/login' || // Typically hide header on login too
+            path === '/login' ||
             path === '/student-login' ||
             path === '/partner-register' ||
             path === '/student-register' ||
             path === '/register';
 
-        // 2. Footer: Hide on Portal Apps
+        // 2. Footer: Hide only on Portal Apps
         const shouldHideFooter = path === '/dashboard' ||
             path.startsWith('/partner/') ||
             path.startsWith('/admin') ||
@@ -171,6 +170,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Adjust body padding
         document.body.style.paddingTop = shouldHideHeader ? '0' : '';
+
+        // Page-specific initializers (run after route content is in the DOM)
+        setTimeout(() => {
+            if (path === '/' || path === '') {
+                initHome();
+            }
+        }, 50);
     });
 });
 

@@ -18,25 +18,22 @@ async function main() {
 
     const booksToInsert: any[] = [];
 
-    // Iterate over categories
-    if (data.catalogue && Array.isArray(data.catalogue)) {
-        for (const cat of data.catalogue) {
-            const categoryName = cat.category;
-            if (cat.books && Array.isArray(cat.books)) {
-                for (const book of cat.books) {
-                    booksToInsert.push({
-                        code: String(book.code), // Ensure string
-                        title: book.title,
-                        class: book.class !== undefined ? String(book.class) : null,
-                        category: categoryName,
-                        coverImage: book.image || null,
-                        priceRetail: book.price || 0,
-                        pricePartner: (book.price || 0) * 0.75, // Estimate partner price
-                        stock: 100,
-                        isActive: true
-                    });
-                }
-            }
+    // Iterate over books directly
+    if (data.books && Array.isArray(data.books)) {
+        for (const book of data.books) {
+            booksToInsert.push({
+                code: String(book.code),
+                title: book.title,
+                class: book.class !== undefined ? String(book.class) : null,
+                category: book.category, // Category from generic subject map
+                subject: book.subject,   // Allow subject filtering
+                unit: book.unit || 'Aroma', // Default to Aroma if missing
+                coverImage: book.image || null,
+                priceRetail: book.price || 0,
+                pricePartner: (book.price || 0) * 0.75,
+                stock: 100,
+                isActive: book.isActive !== undefined ? book.isActive : true
+            });
         }
     }
 

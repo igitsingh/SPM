@@ -2,7 +2,7 @@
  * Simple State Management
  */
 
-export const API_URL = 'http://localhost:3002';
+export const API_URL = 'http://localhost:4001';
 const STORE_KEY = 'paradise_cart';
 
 export const store = {
