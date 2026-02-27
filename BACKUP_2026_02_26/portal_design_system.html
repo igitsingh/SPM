@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SPM Portal Design System</title><!-- Design System Imports --><link rel="stylesheet" href="css/variables.css"><link rel="stylesheet" href="css/global.css"><!-- Reusing global resets/fonts --><link rel="stylesheet" href="css/portal.css"><style>
+        /* Demo Page Specific Styles */
+        .color-swatch {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .section-title {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #888;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .component-section {
+            margin-bottom: 60px;
+            scroll-margin-top: 40px;
+            /* Offset for scroll */
+        }
+    </style></head><body class="spm-portal spm-layout"><!-- Sidebar --><aside class="spm-sidebar"><div style="margin-bottom: 40px; padding: 0 16px; cursor: pointer;" onclick="window.location.href='/'"><div style="font-size: 2rem;"></div><div style="font-weight: 800; color: var(--primary); font-family: var(--font-main);">SPM Portal</div><div style="font-size: 0.8rem; color: var(--text-muted); letter-spacing: 1px;">DESIGN SYSTEM</div></div><nav><a href="#styles" class="spm-nav-item active" onclick="setActive(this)"><span class="spm-nav-icon"></span> Styles
+            </a><a href="#components" class="spm-nav-item" onclick="setActive(this)"><span class="spm-nav-icon"></span> Components
+            </a><a href="#tables" class="spm-nav-item" onclick="setActive(this)"><span class="spm-nav-icon"></span> Data Tables
+            </a><a href="#forms" class="spm-nav-item" onclick="setActive(this)"><span class="spm-nav-icon"></span> Forms
+            </a><a href="#settings" class="spm-nav-item" onclick="setActive(this)"><span class="spm-nav-icon">️</span> Settings
+            </a></nav><div style="margin-top: auto; padding: 16px; border-top: 1px solid var(--border-color);"><div style="display: flex; align-items: center; gap: 10px;"><div
+                    style="width: 32px; height: 32px; background: var(--primary); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center;">
+                    ADM</div><div><div style="font-weight: 600; font-size: 0.9rem;">Admin User</div><div style="font-size: 0.75rem; color: var(--text-muted);">admin@spm.com</div></div></div></div></aside><!-- Main Content --><main class="spm-main"><header style="margin-bottom: 40px; display: flex; justify-content: space-between; align-items: center;"><div><h1 class="spm-heading">Portal Design System</h1><p style="color: var(--text-muted);">A comprehensive guide to Suman Prakashan Mandir's internal UI
+                    components.</p></div><div class="flex gap-4"><button class="spm-btn spm-btn-secondary" onclick="alert('Downloading Assets Bundle...')">Download
+                    Assets</button><button class="spm-btn spm-btn-primary" onclick="alert('Opening Documentation...')">View
+                    Documentation</button></div></header><!-- Colors & Styles --><section id="styles" class="component-section"><div class="section-title">Brand Colors</div><div class="grid-demo"><div><div class="color-swatch" style="background: var(--primary);"></div><strong>Primary</strong><br><small>#1565c0</small></div><div><div class="color-swatch" style="background: var(--secondary);"></div><strong>Secondary</strong><br><small>#f9a825</small></div><div><div class="color-swatch" style="background: var(--primary-light);"></div><strong>Primary Light</strong><br><small>#1976d2</small></div><div><div class="color-swatch" style="background: var(--bg-body);"></div><strong>Background</strong><br><small>#f5f7fa</small></div></div></section><!-- Stats --><section class="component-section"><div class="section-title">Dashboard Stats</div><div class="spm-stats-grid"><div class="spm-stat-card"><div class="spm-stat-label">Total Books Sold</div><div class="spm-stat-value">1,248</div><div class="spm-badge spm-badge-success">↑ 12% vs last month</div></div><div class="spm-stat-card"><div class="spm-stat-label">Active Distributors</div><div class="spm-stat-value">34</div><div class="spm-badge spm-badge-info">2 New pending</div></div><div class="spm-stat-card"><div class="spm-stat-label">Pending Orders</div><div class="spm-stat-value">8</div><div class="spm-badge spm-badge-warning">Requires Attention</div></div><div class="spm-stat-card"><div class="spm-stat-label">Revenue (YTD)</div><div class="spm-stat-value">₹45.2L</div><div class="spm-badge spm-badge-success">On Track</div></div></div></section><!-- Components --><section id="components" class="component-section"><div class="section-title">Buttons</div><div class="spm-card"><div class="flex gap-4 items-center flex-wrap"><button class="spm-btn spm-btn-primary" onclick="alert('Primary Clicked')">Primary Action</button><button class="spm-btn spm-btn-secondary" onclick="alert('Secondary Clicked')">Secondary
+                        Action</button><button class="spm-btn spm-btn-accent" onclick="alert('Accent Clicked')">Accent Action</button><button class="spm-btn spm-btn-primary" disabled>Disabled</button><button class="spm-btn spm-btn-secondary" disabled>Disabled</button></div></div></section><!-- Tabs --><section class="component-section"><div class="section-title">Tabs</div><div class="spm-tabs"><div class="spm-tab active" onclick="alert('Tab 1')">Distributor Orders</div><div class="spm-tab" onclick="alert('Tab 2')">School Direct</div><div class="spm-tab" onclick="alert('Tab 3')">Online Retail</div></div></section><!-- Tables --><section id="tables" class="component-section"><div class="section-title">Data Tables</div><div class="spm-card"><div class="spm-card-header"><h3 class="spm-card-title">Recent Orders</h3><button class="spm-btn spm-btn-secondary" style="padding: 6px 12px; font-size: 0.8rem;"
+                        onclick="alert('Exporting CSV...')">Export CSV</button></div><div class="spm-table-container"><table class="spm-table"><thead><tr><th>Order ID</th><th>Customer / School</th><th>Date</th><th>Amount</th><th>Status</th><th>Actions</th></tr></thead><tbody><tr><td>#ORD-2024-001</td><td><strong>St. Mary's Academy</strong><br><small style="color:#888">Meerut</small></td><td>Oct 24, 2024</td><td>₹1,25,000</td><td><span class="spm-badge spm-badge-success">Completed</span></td><td><button class="spm-btn spm-btn-secondary" style="padding: 4px 8px;"
+                                        onclick="alert('Viewing #ORD-2024-001')">View</button></td></tr><tr><td>#ORD-2024-002</td><td><strong>Saraswati Vihar</strong><br><small style="color:#888">Delhi</small></td><td>Oct 23, 2024</td><td>₹45,600</td><td><span class="spm-badge spm-badge-warning">Processing</span></td><td><button class="spm-btn spm-btn-secondary" style="padding: 4px 8px;"
+                                        onclick="alert('Viewing #ORD-2024-002')">View</button></td></tr><tr><td>#ORD-2024-003</td><td><strong>Rohan Book Depot</strong><br><small style="color:#888">Distributor</small></td><td>Oct 23, 2024</td><td>₹8,900</td><td><span class="spm-badge spm-badge-danger">Failed</span></td><td><button class="spm-btn spm-btn-secondary" style="padding: 4px 8px;"
+                                        onclick="alert('Viewing #ORD-2024-003')">View</button></td></tr></tbody></table></div></div></section><!-- Alerts --><section class="component-section"><div class="section-title">Alerts / Notifications</div><div class="spm-alert spm-alert-success"><strong>Success!</strong> &nbsp; Database updated successfully.
+            </div><div class="spm-alert spm-alert-warning"><strong>Warning:</strong> &nbsp; Stock for "Maths Vol 1" is running low (15 remaining).
+            </div><div class="spm-alert spm-alert-danger"><strong>Error:</strong> &nbsp; Failed to connect to payment gateway.
+            </div><div class="spm-alert spm-alert-info"><strong>Info:</strong> &nbsp; New feature: You can now export reports as PDF.
+            </div></section><!-- Forms --><section id="forms" class="component-section"><div class="section-title">Form Elements</div><div class="spm-card" style="max-width: 600px;"><h3 class="spm-card-title" style="margin-bottom: 20px;">Edit Profile</h3><div class="grid" style="grid-template-columns: 1fr 1fr; gap: 20px;"><div class="spm-form-group"><label class="spm-label">First Name</label><input type="text" class="spm-input" value="Ramesh"></div><div class="spm-form-group"><label class="spm-label">Last Name</label><input type="text" class="spm-input" value="Gupta"></div></div><div class="spm-form-group"><label class="spm-label">Email Address</label><input type="email" class="spm-input" value="ramesh.gupta@spm.com"></div><div class="spm-form-group"><label class="spm-label">Role</label><select class="spm-select"><option>Administrator</option><option>Editor</option><option>Viewer</option></select></div><div class="spm-form-group"><label class="spm-label">Bio</label><textarea class="spm-textarea"
+                        rows="4">Senior editor responsible for Science and Math curriculum.</textarea></div><div class="spm-form-group"><label style="display: flex; align-items: center; gap: 8px; cursor: pointer;"><input type="checkbox" checked style="accent-color: var(--primary);"><span style="font-size: 0.9rem;">Receive email notifications for new orders</span></label></div><div style="margin-top: 20px;"><button class="spm-btn spm-btn-primary" onclick="alert('Saved Successfully!')">Save Changes</button><button class="spm-btn spm-btn-secondary" onclick="alert('Cancelled')">Cancel</button></div></div></section><!-- Settings --><section id="settings" class="component-section"><div class="section-title">Settings Example</div><div class="spm-card"><div class="flex gap-4"><button class="spm-btn spm-btn-secondary" onclick="alert('Resetting Defaults...')">Reset
+                        Defaults</button><button class="spm-btn spm-btn-primary" onclick="window.location.href='#/admin/config'">Go to Admin
+                        Config</button></div></div></section></main><script>
+        function setActive(element) {
+            document.querySelectorAll('.spm-nav-item').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+        }
+    </script></body></html>

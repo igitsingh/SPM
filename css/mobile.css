@@ -1,0 +1,826 @@
+/* ═══════════════════════════════════════════════════════════════════
+   SPM MOBILE RESPONSIVE STYLESHEET
+   Breakpoints:
+     - Small phones:  ≤ 480px
+     - Phones:        ≤ 768px
+     - Tablets:       ≤ 1024px
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─── Base / Global ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    body {
+        padding-top: 56px;
+        overflow-x: hidden;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .section {
+        padding: 48px 0;
+    }
+
+    /* Utility: hide on mobile */
+    .hide-mobile {
+        display: none !important;
+    }
+}
+
+/* Mobile-only elements: hidden by default, shown in mobile media queries */
+.spm-mobile-footer-links {
+    display: none;
+}
+
+/* ─── NAVBAR ────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+
+    /* Hide desktop nav, show hamburger */
+    .spm-nav-main,
+    .spm-search-wrap {
+        display: none !important;
+    }
+
+    .mobile-menu-icon {
+        display: flex !important;
+    }
+
+    .spm-navbar {
+        padding: 0 20px;
+        height: 64px;
+    }
+
+    /* Shrink logo on tablet/mobile */
+    .spm-logo-top {
+        height: 60px;
+        padding: 0 10px;
+    }
+
+    .spm-logo-main-text {
+        font-size: 2.2rem !important;
+    }
+
+    .spm-logo-sub-text {
+        letter-spacing: 4px;
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .spm-navbar-wrap {
+        border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .spm-navbar {
+        padding: 0 14px;
+        height: 56px;
+        min-height: 56px;
+        align-items: center;
+    }
+
+    /* Scale the entire logo unit down uniformly — preserves its visual identity */
+    .spm-brand-box,
+    .spm-logo-link {
+        transform: scale(0.58) !important;
+        transform-origin: top left !important;
+        /* Compensate for the space the scaled-down element would leave */
+        margin-right: calc((1 - 0.58) * -180px) !important;
+        margin-bottom: calc((1 - 0.58) * -76px) !important;
+    }
+
+    /* Mobile slide-in menu tweaks */
+    .spm-mobile-menu {
+        width: 85% !important;
+        padding: 30px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .spm-mobile-menu {
+        width: 100% !important;
+        padding: 28px 20px;
+    }
+}
+
+/* ─── HERO SLIDER ───────────────────────────────────────────────── */
+@media (max-width: 991px) {
+    .spm-hero-slider {
+        height: 520px;
+    }
+
+    .spm-slide-container {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+        padding: 0 20px !important;
+        gap: 0 !important;
+    }
+
+    .spm-slide-visual {
+        display: none !important;
+    }
+
+    .spm-series-name {
+        font-size: 3rem !important;
+    }
+
+    .spm-series-label {
+        font-size: 1.3rem !important;
+    }
+
+    .spm-series-tagline {
+        font-size: 1.1rem !important;
+        margin-bottom: 28px !important;
+    }
+
+    .spm-hero-social {
+        display: none !important;
+    }
+
+    .spm-hero-dots {
+        bottom: 24px;
+    }
+}
+
+/* Also hide hero visuals below 768 for devices using browser zoom */
+@media (max-width: 768px) {
+
+    .spm-slide-visual,
+    .spm-hero-social {
+        display: none !important;
+    }
+
+    .spm-slide-container {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+        padding: 0 16px !important;
+    }
+
+    .spm-hero-slider {
+        height: 460px;
+    }
+}
+
+@media (max-width: 600px) {
+    .spm-hero-slider {
+        height: 420px;
+    }
+
+    .spm-series-name {
+        font-size: 2.2rem !important;
+        letter-spacing: -1px !important;
+    }
+
+    .spm-series-label {
+        font-size: 1.1rem !important;
+    }
+
+    .spm-series-tagline {
+        font-size: 0.95rem !important;
+        margin-bottom: 24px !important;
+    }
+
+    .spm-discover-btn {
+        padding: 12px 28px !important;
+        font-size: 0.95rem !important;
+    }
+}
+
+/* ─── EXPLORE / BRAND SECTION ───────────────────────────────────── */
+@media (max-width: 1024px) {
+    .spm-explore-section {
+        padding: 60px 24px !important;
+    }
+
+    .spm-explore-inner {
+        padding: 48px 24px !important;
+        border-radius: 24px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .spm-explore-section {
+        padding: 48px 16px !important;
+    }
+
+    .spm-explore-inner {
+        padding: 32px 16px !important;
+        border-radius: 16px !important;
+    }
+
+    .spm-explore-title {
+        font-size: 1.6rem !important;
+    }
+
+    .spm-explore-sub {
+        font-size: 0.9rem !important;
+    }
+
+    .spm-mission-highlight {
+        padding: 16px 20px !important;
+        margin-top: 12px !important;
+    }
+
+    .spm-mission-highlight strong {
+        font-size: 0.95rem !important;
+    }
+
+    /* Publisher tabs: 2 per row on mobile */
+    .spm-pub-tabs {
+        gap: 12px !important;
+    }
+
+    .spm-pub-tab {
+        width: calc(50% - 6px) !important;
+        height: 100px !important;
+        padding: 12px !important;
+    }
+
+    .spm-pub-tab-logo-wrap {
+        height: 60px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .spm-pub-tab {
+        width: 100% !important;
+    }
+}
+
+/* ─── VIDEO & BLOGS / COMPACT BUNDLES ──────────────────────────── */
+@media (max-width: 768px) {
+    .spm-compact-bundles .grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+
+    .spm-compact-bundles {
+        margin-top: 0 !important;
+        margin-bottom: 24px !important;
+    }
+
+    .bundle-banner {
+        min-height: 180px !important;
+        padding: 0 !important;
+    }
+
+    .bundle-content {
+        max-width: 100% !important;
+        padding: 24px !important;
+    }
+
+    .bundle-content h3 {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* ─── REELS / VIDEO SECTION ─────────────────────────────────────── */
+@media (max-width: 992px) {
+    .reels-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 24px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .reels-container {
+        display: flex !important;
+        overflow-x: auto !important;
+        padding: 16px 12px 24px !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 16px !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .reel-item {
+        flex: 0 0 220px !important;
+        scroll-snap-align: center !important;
+    }
+}
+
+/* ─── KINDERGARTEN / BOOKS SECTIONS ────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* Auto 2-column grid for book cards on mobile */
+    .section .grid[style*="repeat(auto-fit, minmax(230px"],
+    .section .grid[style*="repeat(auto-fit, minmax(200px"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+    }
+
+    /* Section headings */
+    .section h2[style*="2.8rem"],
+    .section h2[style*="3rem"] {
+        font-size: 1.8rem !important;
+    }
+
+    .section .text-center[style*="margin-top:40px"],
+    .section .text-center[style*="margin-top: 40px"] {
+        margin-top: 24px !important;
+    }
+}
+
+@media (max-width: 400px) {
+
+    /* Single column on very small phones */
+    .section .grid[style*="repeat(auto-fit, minmax(230px"],
+    .section .grid[style*="repeat(auto-fit, minmax(200px"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ─── STATS SECTION ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .stats-container {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px 16px !important;
+        padding: 40px 16px !important;
+        text-align: center !important;
+    }
+
+    .stat-item {
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 12px;
+        padding: 16px 8px !important;
+    }
+
+    .stat-number {
+        font-size: 2rem !important;
+        margin-bottom: 4px !important;
+        white-space: nowrap;
+    }
+
+    .stat-label {
+        font-size: 0.75rem !important;
+        letter-spacing: 0.3px !important;
+        line-height: 1.3 !important;
+    }
+}
+
+/* ─── TESTIMONIALS ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* Testimonials grid: 1 column */
+    .section .grid[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+
+    .testimonial-card {
+        padding: 20px !important;
+    }
+
+    .testimonial-card p[style*="1.25rem"] {
+        font-size: 1rem !important;
+    }
+}
+
+/* ─── HIGHLIGHT / CTA SECTION ───────────────────────────────────── */
+@media (max-width: 768px) {
+    .highlight-section {
+        padding: 60px 20px !important;
+    }
+
+    .highlight-title {
+        font-size: 1.9rem !important;
+        letter-spacing: 0 !important;
+    }
+
+    .highlight-subtitle {
+        font-size: 1rem !important;
+        padding: 0 8px !important;
+        margin-bottom: 32px !important;
+    }
+
+    .highlight-btn {
+        padding: 14px 32px !important;
+        font-size: 0.95rem !important;
+    }
+}
+
+/* ─── VIEW ALL BUTTON ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .spm-view-all-btn {
+        padding: 12px 24px !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+/* ─── CATALOGUE PAGE ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .catalogue-layout {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+
+    .filters-sidebar {
+        position: static !important;
+        top: auto !important;
+    }
+
+    .books-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .books-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ─── ORDER PAGE ────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .order-layout {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+
+    .order-summary-sidebar {
+        position: static !important;
+    }
+
+    .order-form-section {
+        padding: 20px 16px !important;
+    }
+}
+
+/* ─── ABOUT PAGE ────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* Two-col grids become 1-col */
+    [style*="grid-template-columns: 1fr 1fr"],
+    [style*="grid-template-columns: 1fr 2fr"],
+    [style*="grid-template-columns: 2fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ─── BOOK CARD ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .book-card {
+        padding: 6px !important;
+    }
+
+    .book-info h3 {
+        font-size: 0.9rem !important;
+    }
+
+    .book-price {
+        font-size: 0.95rem !important;
+    }
+
+    .btn-add-cart {
+        padding: 10px !important;
+        font-size: 0.78rem !important;
+    }
+}
+
+/* ─── FLYOUT / BOOK DETAIL ──────────────────────────────────────── */
+@media (max-width: 768px) {
+    .flyout {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+}
+
+/* ─── MODAL ─────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+    .modal {
+        width: 95% !important;
+        max-width: none !important;
+    }
+
+    .order-options {
+        gap: 8px !important;
+    }
+}
+
+/* ─── TABS (HEADER AREA) ────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .tabs-header {
+        gap: 8px !important;
+        margin-bottom: 28px !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+
+    .tab-btn {
+        padding: 8px 16px !important;
+        font-size: 0.82rem !important;
+    }
+}
+
+/* ─── PORTAL / ADMIN LAYOUT ─────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .spm-main {
+        padding: 24px 20px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .spm-main {
+        padding: 16px !important;
+    }
+
+    .spm-layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .spm-stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .spm-action-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .spm-table-container {
+        font-size: 0.82rem;
+    }
+
+    .spm-table th,
+    .spm-table td {
+        padding: 10px 12px !important;
+    }
+
+    .spm-filter-bar {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 8px !important;
+    }
+
+    .spm-search-input {
+        min-width: unset !important;
+    }
+
+    .spm-dashboard-hero {
+        flex-direction: column !important;
+        gap: 16px !important;
+        padding: 20px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .spm-stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .spm-action-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ─── FOOTER — WORLD-CLASS MOBILE REDESIGN ──────────────────────── */
+@media (max-width: 768px) {
+
+    /* Outer wrapper: tighter padding */
+    footer>div {
+        padding: 32px 20px 16px !important;
+    }
+
+    /* Main content grid → single column, no gap */
+    footer>div>div:first-child {
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+        margin-bottom: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* ── Brand block: compact horizontal strip ── */
+    footer>div>div:first-child>div:first-child {
+        display: flex !important;
+        align-items: center !important;
+        gap: 14px !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 20px !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+    }
+
+    /* Logo text: scale down */
+    footer>div>div:first-child>div:first-child>div:first-child>div:first-child {
+        font-size: 2rem !important;
+        line-height: 0.8 !important;
+    }
+
+    /* Tagline: small, muted, flex-fills the space */
+    footer>div>div:first-child>div:first-child>p {
+        font-size: 0.78rem !important;
+        line-height: 1.45 !important;
+        color: #999 !important;
+        margin-bottom: 0 !important;
+        flex: 1;
+    }
+
+    /* Social icons row: keep visible, reposition to right of brand */
+    footer>div>div:first-child>div:first-child>div.flex {
+        margin-left: auto !important;
+        gap: 10px !important;
+        opacity: 0.85;
+    }
+
+    footer>div>div:first-child>div:first-child>div.flex svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    /* ── Navigation columns: hide full columns, show compact strip ── */
+    footer>div>div:first-child>div:nth-child(2),
+    footer>div>div:first-child>div:nth-child(3) {
+        display: none !important;
+    }
+
+    /* Contact column: compact inline layout */
+    footer>div>div:first-child>div:nth-child(4) {
+        padding: 16px 0 16px !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+    }
+
+    footer>div>div:first-child>div:nth-child(4) h4 {
+        font-size: 0.68rem !important;
+        letter-spacing: 1.5px !important;
+        text-transform: uppercase !important;
+        color: rgba(255, 255, 255, 0.4) !important;
+        margin-bottom: 12px !important;
+        font-weight: 700 !important;
+    }
+
+    footer>div>div:first-child>div:nth-child(4) ul {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 8px 20px !important;
+        align-items: center !important;
+    }
+
+    footer>div>div:first-child>div:nth-child(4) ul li {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+    }
+
+    footer>div>div:first-child>div:nth-child(4) ul li svg {
+        width: 13px !important;
+        height: 13px !important;
+        flex-shrink: 0 !important;
+        opacity: 0.6;
+    }
+
+    footer>div>div:first-child>div:nth-child(4) ul li span {
+        font-size: 0.78rem !important;
+        color: #aaa !important;
+        white-space: nowrap;
+    }
+
+    /* ── Quick links pill strip ── */
+    .spm-mobile-footer-links {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+        padding: 14px 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+    }
+
+    .spm-mobile-footer-links a {
+        color: #888 !important;
+        font-size: 0.75rem !important;
+        text-decoration: none !important;
+        font-weight: 500;
+        padding: 4px 10px !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border-radius: 20px !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        transition: all 0.2s;
+        white-space: nowrap;
+    }
+
+    .spm-mobile-footer-links a:hover {
+        color: #FFD700 !important;
+        border-color: rgba(255, 215, 0, 0.3) !important;
+        background: rgba(255, 215, 0, 0.05) !important;
+    }
+
+    /* ── Bottom copyright bar ── */
+    footer>div>div[style*="border-top"] {
+        flex-direction: column !important;
+        gap: 6px !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding-top: 14px !important;
+        margin-top: 0 !important;
+        font-size: 0.72rem !important;
+    }
+
+    footer>div>div[style*="border-top"]>div:last-child {
+        gap: 12px !important;
+        font-size: 0.72rem !important;
+    }
+
+    /* ── "HOUSE OF FLOYDS" watermark: reduce spacing ── */
+    footer>div>div[style*="HOUSE"] {
+        margin-top: 20px !important;
+        font-size: 0.6rem !important;
+        letter-spacing: 4px !important;
+    }
+}
+
+/* ─── VIDEO LIBRARY PAGE ────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* Video grid cards: 1 col */
+    [class*="video-grid"],
+    [id*="video-grid"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ─── STUDENTS CORNER ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* Subject tabs on students corner: scroll horizontally */
+    .spm-subject-tabs,
+    [class*="subject-tabs"] {
+        overflow-x: auto;
+        flex-wrap: nowrap !important;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 8px;
+        scrollbar-width: none;
+    }
+
+    .spm-subject-tabs::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* ─── TYPOGRAPHY CORRECTIONS ────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* Inline styles with huge font sizes — generic override */
+    h2[style*="font-size: 3rem"],
+    h2[style*="font-size:3rem"] {
+        font-size: 1.9rem !important;
+    }
+
+    h2[style*="font-size: 2.8rem"],
+    h2[style*="font-size:2.8rem"] {
+        font-size: 1.7rem !important;
+    }
+
+    h3[style*="font-size: 1.8rem"],
+    h3[style*="font-size:1.8rem"] {
+        font-size: 1.4rem !important;
+    }
+
+    p[style*="font-size: 1.4rem"],
+    p[style*="font-size:1.4rem"],
+    p[style*="font-size: 1.2rem"],
+    p[style*="font-size:1.2rem"] {
+        font-size: 1rem !important;
+    }
+
+    p[style*="font-size: 1.1rem"],
+    p[style*="font-size:1.1rem"] {
+        font-size: 0.95rem !important;
+    }
+}
+
+/* ─── SCROLLBAR IMPROVEMENTS FOR TOUCH ─────────────────────────── */
+@media (max-width: 768px) {
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Improve scroll performance */
+    .spm-mobile-menu,
+    .flyout-body,
+    .filters-sidebar {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* ─── MISC SPACING FIXES ────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* Section padding harmony */
+    .section[style*="padding-top: 100px"],
+    .section[style*="padding-top:100px"] {
+        padding-top: 56px !important;
+    }
+
+    .section[style*="padding-bottom: 100px"],
+    .section[style*="padding-bottom:100px"] {
+        padding-bottom: 56px !important;
+    }
+
+    .section[style*="padding-top: 80px"],
+    .section[style*="padding-top:80px"] {
+        padding-top: 48px !important;
+    }
+
+    .section[style*="padding-bottom: 80px"],
+    .section[style*="padding-bottom:80px"] {
+        padding-bottom: 48px !important;
+    }
+}

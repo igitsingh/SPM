@@ -1,0 +1,198 @@
+// SPM Backend Schema Draft
+// Based on specification in docs/backend_architecture.md
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  admin
+  partner
+  customer
+}
+
+enum OrderStatus {
+  draft
+  pending
+  confirmed
+  dispatched
+  delivered
+  cancelled
+}
+
+enum PaymentStatus {
+  unpaid
+  partial
+  paid
+  refunded
+}
+
+enum ReferralStatus {
+  sent
+  registered
+  qualified
+  rewarded
+}
+
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  passwordHash  String?
+  name          String?
+  role          Role
+  phone         String?
+  metadata      Json?
+  isActive      Boolean   @default(true)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Relations
+  Partner       Partner?
+  Customer      Customer?
+  OrdersPlaced  Order[]   @relation("PlacedBy")
+  OrdersBuying  Order[]   @relation("Buyer")
+  
+  // For Referral System (User being referred)
+  Referral      Referral? @relation("ReferredUser")
+}
+
+model Partner {
+  id          String   @id @default(uuid())
+  userId      String   @unique
+  user        User     @relation(fields: [userId], references: [id])
+  
+  shopName    String
+  gstin       String?
+  category    String?  // A/B/C
+  creditLimit Decimal  @default(0)
+  usedCredit  Decimal  @default(0)
+  boardMix    Json?
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  ReferralsGenerated Referral[] @relation("Referrer")
+}
+
+model Customer {
+  id          String   @id @default(uuid())
+  userId      String   @unique
+  user        User     @relation(fields: [userId], references: [id])
+  
+  schoolName  String?
+  schoolType  String?
+  address     String?
+  city        String?
+  state       String?
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Book {
+  id           String   @id @default(uuid())
+  code         String   @unique
+  title        String
+  class        String?
+  board        String?
+  priceRetail  Decimal
+  pricePartner Decimal
+  stock        Int      @default(0)
+  metadata     Json?
+  
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  OrderItems   OrderItem[]
+}
+
+model Order {
+  id              String        @id @default(uuid())
+  orderNumber     String        @unique // SPM-YYYY-XXXX
+  
+  buyerUserId     String
+  buyer           User          @relation("Buyer", fields: [buyerUserId], references: [id])
+  
+  placedById      String
+  placedBy        User          @relation("PlacedBy", fields: [placedById], references: [id])
+
+  type            String        // 'customer' or 'partner'
+  status          OrderStatus   @default(draft)
+  
+  subtotal        Decimal
+  discountTotal   Decimal
+  taxTotal        Decimal
+  total           Decimal
+  
+  paymentStatus   PaymentStatus @default(unpaid)
+  shippingAddress Json?
+  
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  items           OrderItem[]
+  invoices        Invoice[]
+  payments        Payment[]
+}
+
+model OrderItem {
+  id        String  @id @default(uuid())
+  orderId   String
+  order     Order   @relation(fields: [orderId], references: [id])
+  
+  bookId    String
+  book      Book    @relation(fields: [bookId], references: [id])
+  
+  qty       Int
+  unitPrice Decimal
+  lineTotal Decimal
+}
+
+model Invoice {
+  id            String   @id @default(uuid())
+  orderId       String
+  order         Order    @relation(fields: [orderId], references: [id])
+  invoiceNumber String
+  pdfUrl        String?
+  amount        Decimal
+  issuedAt      DateTime @default(now())
+  paidAt        DateTime?
+}
+
+model Payment {
+  id                String   @id @default(uuid())
+  orderId           String
+  order             Order    @relation(fields: [orderId], references: [id])
+  provider          String
+  providerPaymentId String?
+  amount            Decimal
+  status            String
+  meta              Json?
+  createdAt         DateTime @default(now())
+}
+
+model Referral {
+  id                  String         @id @default(uuid())
+  
+  referrerPartnerId   String
+  referrer            Partner        @relation("Referrer", fields: [referrerPartnerId], references: [id])
+  
+  referredEmail       String
+  referredUserId      String?        @unique
+  referredUser        User?          @relation("ReferredUser", fields: [referredUserId], references: [id]) // The user who joined
+  
+  referralCode        String         @unique
+  status              ReferralStatus @default(sent)
+  
+  qualifyingOrderTotal Decimal       @default(0)
+  rewardPercent        Decimal       @default(0)
+  rewardAmount         Decimal       @default(0)
+  
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @updatedAt
+}

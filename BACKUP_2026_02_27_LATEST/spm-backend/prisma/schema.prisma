@@ -1,0 +1,231 @@
+// SPM Backend Schema - SQLite Version (Fallback)
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  passwordHash  String?
+  name          String?
+  role          String      @default("partner")
+  subRole       String?   
+  phone         String?
+  metadata      String?   // Converted from Json
+  isActive      Boolean   @default(true)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  Partner       Partner?
+  Customer      Customer?
+  OrdersPlaced  Order[]   @relation("PlacedBy")
+  OrdersBuying  Order[]   @relation("Buyer")
+  Referral      Referral? @relation("ReferredUser")
+}
+
+model Partner {
+  id          String   @id @default(uuid())
+  userId      String   @unique
+  user        User     @relation(fields: [userId], references: [id])
+  
+  shopName    String
+  gstin       String?
+  category    String?  
+  creditLimit Decimal  @default(0)
+  usedCredit  Decimal  @default(0)
+  boardMix    String?  // Converted from Json
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  ReferralsGenerated Referral[] @relation("Referrer")
+}
+
+model Customer {
+  id          String   @id @default(uuid())
+  userId      String   @unique
+  user        User     @relation(fields: [userId], references: [id])
+  
+  schoolName  String?
+  schoolType  String?
+  address     String?
+  city        String?
+  state       String?
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Book {
+  id           String   @id @default(uuid())
+  code         String   @unique
+  title        String
+  class        String?
+  subject      String?
+  category     String?
+  board        String?
+  unit         String?  @default("Aroma") // Aroma, Bluemoon, Deepanshu, Disney, Harmony, Pearl
+  coverImage   String?
+  priceRetail  Decimal
+  pricePartner Decimal
+  stock        Int      @default(0)
+  isActive     Boolean  @default(true)
+  metadata     String?  // Converted from Json
+  
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  OrderItems   OrderItem[]
+  InventoryLogs InventoryLog[]
+}
+
+model InventoryLog {
+  id        String   @id @default(uuid())
+  bookId    String
+  book      Book     @relation(fields: [bookId], references: [id])
+  type      String   
+  quantity  Int      
+  reason    String?
+  createdAt DateTime @default(now())
+}
+
+model Order {
+  id              String        @id @default(uuid())
+  orderNumber     String        @unique 
+  
+  buyerUserId     String
+  buyer           User          @relation("Buyer", fields: [buyerUserId], references: [id])
+  
+  placedById      String
+  placedBy        User          @relation("PlacedBy", fields: [placedById], references: [id])
+
+  type            String        
+  status          String   @default("draft")
+  
+  subtotal        Decimal
+  discountTotal   Decimal
+  taxTotal        Decimal
+  total           Decimal
+  
+  paymentStatus   String @default("unpaid")
+  shippingAddress String? // Converted from Json
+  notes           String?
+  timeline        String?    // Converted from Json
+  
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  items           OrderItem[]
+  invoices        Invoice[]
+  payments        Payment[]
+}
+
+model OrderItem {
+  id        String  @id @default(uuid())
+  orderId   String
+  order     Order   @relation(fields: [orderId], references: [id])
+  
+  bookId    String
+  book      Book    @relation(fields: [bookId], references: [id])
+  
+  qty       Int
+  unitPrice Decimal
+  lineTotal Decimal
+}
+
+model Invoice {
+  id            String   @id @default(uuid())
+  orderId       String
+  order         Order    @relation(fields: [orderId], references: [id])
+  invoiceNumber String
+  pdfUrl        String?
+  amount        Decimal
+  issuedAt      DateTime @default(now())
+  paidAt        DateTime?
+}
+
+model Payment {
+  id                String   @id @default(uuid())
+  orderId           String
+  order             Order    @relation(fields: [orderId], references: [id])
+  provider          String   
+  method            String?  
+  reference         String?
+  date              DateTime @default(now())
+  providerPaymentId String?
+  amount            Decimal
+  status            String   
+  notes             String?
+  meta              String?  // Converted from Json
+  createdAt         DateTime @default(now())
+}
+
+model Referral {
+  id                  String         @id @default(uuid())
+  
+  referrerPartnerId   String
+  referrer            Partner        @relation("Referrer", fields: [referrerPartnerId], references: [id])
+  
+  referredEmail       String
+  referredUserId      String?        @unique
+  referredUser        User?          @relation("ReferredUser", fields: [referredUserId], references: [id]) 
+  
+  referralCode        String         @unique
+  status              String @default("sent")
+  
+  qualifyingOrderTotal Decimal       @default(0)
+  rewardPercent        Decimal       @default(0)
+  rewardAmount         Decimal       @default(0)
+  
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @updatedAt
+}
+
+model Scheme {
+  id          String    @id @default(uuid())
+  name        String
+  description String?
+  type        String    
+  value       Decimal
+  
+  minOrderValue Decimal?
+  validFrom     DateTime
+  validUntil    DateTime?
+  isActive      Boolean   @default(true)
+  
+  applicableTo  String?  // Converted from Json
+  
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Video {
+  id          String   @id @default(uuid())
+  title       String
+  youtubeId   String   
+  url         String
+  thumbnail   String?
+  description String?
+  duration    String?
+  views       String?  @default("0")
+  author      String?  @default("SPM Learning")
+  
+  class       String
+  subject     String
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model SystemConfig {
+  key         String   @id
+  value       String
+  description String?
+  updatedAt   DateTime @updatedAt
+}

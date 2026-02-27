@@ -1,0 +1,270 @@
+import { Router } from './router.js';
+import { store } from './store.js';
+
+// Views
+import { renderHome, initHome } from './views/home.js';
+import { renderCatalogue } from './views/catalogue.js';
+import { renderOrder } from './views/order.js';
+import { renderAbout } from './views/about.js';
+import { renderContact } from './views/contact.js';
+import { renderRegister } from './views/register.js';
+import { renderLogin } from './views/login.js';
+import { renderAdminLogin } from './views/admin/admin-login.js';
+import { renderPortalSelect } from './views/portal-select.js';
+import { renderVideoLibrary } from './views/video-library.js';
+import {
+    renderSyllabus, renderExamDatesheets, renderTimeManagement,
+    renderMindMapping, renderEarnWithStudy, renderStudentLeisure,
+    renderBlogs, renderTestPaperGenerator, renderWebSupport,
+    renderVideoLecture, renderInteractiveExercises,
+    renderLessonPlanWorksheets, renderFlipBook
+} from './views/students-corner.js';
+import { renderKindergartenCategory } from './views/kindergarten.js';
+import { renderPartnerRegister } from './views/partner-register.js';
+import { renderStudentRegister } from './views/student-register.js';
+import { renderStudentLogin } from './views/student-login.js';
+import { renderStudentDashboard } from './views/students/dashboard.js';
+import { renderStudentOrders } from './views/students/orders.js';
+import { renderLearningKit } from './views/learning-kits.js';
+
+// Landing Pages
+import { renderBusinessLanding } from './views/landing/business.js';
+import { renderSchoolsLanding } from './views/landing/schools.js';
+import { renderDistributorsLanding } from './views/landing/distributors.js';
+import { renderForBusiness } from './views/for-business.js';
+
+// Components
+import { renderHeader, initHeader } from './components/header_v2.js';
+import { renderFooter } from './components/footer.js';
+import { initFlyout } from './components/flyout.v2.js';
+import { renderAdminLayout } from './components/admin-layout.js';
+import { renderPartnerLayout } from './components/partner-layout.js';
+
+// Auth utilities
+import { protectRoute, isAuthenticated, redirectToDashboard } from './utils/auth.js';
+
+// Admin Views
+import { renderDashboard } from './views/dashboard.js';
+import { renderAdminOrders } from './views/admin/orders.js';
+import { renderCreateOrder } from './views/admin/create-order.js';
+import { renderRetailerProfile } from './views/retailer-profile.js';
+import { renderReferEarn } from './views/partner/refer-earn.js';
+import { renderAdminReferrals } from './views/admin/referrals.js';
+import { renderAdminDashboard } from './views/admin/dashboard.js';
+import { renderAdminVideos } from './views/admin/videos.js';
+import { renderAdminCatalogue } from './views/admin/catalogue.js';
+import { renderAdminInventory } from './views/admin/inventory.js';
+import { renderAdminFinance } from './views/admin/finance.js';
+import { renderAdminUsers } from './views/admin/users.js';
+import { renderAdminSchemes } from './views/admin/schemes.js';
+import { renderAdminConfig } from './views/admin/config.js';
+import { renderOrderHistory } from './views/partner/orders-history.js';
+
+
+// Define Routes
+const routes = {
+    '/': async () => { const html = await renderHome(); return html; },
+    '/video-library': renderVideoLibrary,
+
+    // Students Corner
+    '/syllabus': renderSyllabus,
+    '/exam-datesheets': renderExamDatesheets,
+    '/time-management': renderTimeManagement,
+    '/mind-mapping': renderMindMapping,
+    '/earn-with-study': renderEarnWithStudy,
+    '/student-leisure': renderStudentLeisure,
+    '/blogs': renderBlogs,
+    '/test-paper-generator': renderTestPaperGenerator,
+    '/web-support': renderWebSupport,
+    '/video-lecture': renderVideoLecture,
+    '/interactive-exercises': renderInteractiveExercises,
+    '/worksheets': renderLessonPlanWorksheets,
+    '/flip-book': renderFlipBook,
+
+    // Kindergarten Category Pages
+    '/kindergarten/by-level': () => renderKindergartenCategory('by-level'),
+    '/kindergarten/subjects': () => renderKindergartenCategory('subjects'),
+    '/kindergarten/kits': () => renderKindergartenCategory('kits'),
+    '/learning-kits/full': () => renderLearningKit('full'),
+    '/learning-kits/flash-cards': () => renderLearningKit('flash-cards'),
+    '/learning-kits/posters': () => renderLearningKit('posters'),
+    '/kindergarten/resources': () => renderKindergartenCategory('resources'),
+
+    // Children Books Category Pages
+    '/children/subjects': () => renderKindergartenCategory('children-subjects'),
+    '/children/classes': () => renderKindergartenCategory('children-classes'),
+    '/children/activity': () => renderKindergartenCategory('children-activity'),
+    '/children/resources': () => renderKindergartenCategory('children-resources'),
+
+    // Students Corner Groups
+    '/students/videos': () => renderKindergartenCategory('students-videos'),
+    '/students/interactive': () => renderKindergartenCategory('students-interactive'),
+    '/students/academic': () => renderKindergartenCategory('students-academic'),
+    '/students/hub': () => renderKindergartenCategory('students-hub'),
+    '/login': renderLogin,
+    '/admin/login': renderAdminLogin,
+    '/register': renderRegister,
+    '/partner-register': renderPartnerRegister,
+    '/student-register': renderStudentRegister,
+    '/student-login': renderStudentLogin,
+    '/portal-select': renderPortalSelect,
+
+    // Student/Parent Routes
+    '/students/dashboard': renderStudentDashboard,
+    '/students/orders': renderStudentOrders,
+
+    // Partner Portal Routes (Wrapped in Layout)
+    '/dashboard': async () => renderPartnerLayout(renderDashboard(), '/dashboard'),
+    '/partner/order': async () => renderPartnerLayout(await renderOrder('retailer'), '/partner/order'),
+    '/partner/orders': async () => renderPartnerLayout(await renderOrderHistory(), '/partner/orders'),
+    '/partner/catalogue': async () => renderPartnerLayout(await renderCatalogue(), '/partner/catalogue'),
+    '/partner/invoices': async () => renderPartnerLayout('<div class="spm-card" style="text-align:center; padding: 60px;"><h3>🧾 Invoices Module</h3><p>Start date logic here...</p></div>', '/partner/invoices'),
+    '/partner/settings': async () => renderPartnerLayout('<div class="spm-card" style="text-align:center; padding: 60px;"><h3>⚙️ Settings Module</h3><p>Profile & Preferences</p></div>', '/partner/settings'),
+    '/partner/refer-earn': async () => renderPartnerLayout(renderReferEarn(), '/partner/refer-earn'),
+
+    // Legacy / Public Routes
+    '/catalogue': renderCatalogue,
+    '/order-retailer': () => renderOrder('retailer'),
+
+    // Admin Routes
+    '/admin': async () => renderAdminLayout(renderAdminDashboard(), '/admin/dashboard'),
+    '/admin/dashboard': async () => renderAdminLayout(renderAdminDashboard(), '/admin/dashboard'),
+    '/admin/orders': async () => renderAdminLayout(await renderAdminOrders(), '/admin/orders'),
+    '/admin/orders/create': async () => renderAdminLayout(await renderCreateOrder(), '/admin/orders'),
+    '/admin/retailer-profile': async () => renderAdminLayout(renderRetailerProfile(), '/admin/retailers'),
+    '/admin/referrals': async () => renderAdminLayout(renderAdminReferrals(), '/admin/referrals'),
+    '/admin/retailers': async () => renderAdminLayout(renderRetailerProfile(), '/admin/retailers'),
+    '/admin/videos': async () => renderAdminLayout(await renderAdminVideos(), '/admin/videos'),
+    '/admin/inventory': async () => renderAdminLayout(await renderAdminInventory(), '/admin/inventory'),
+    '/admin/catalogue': async () => renderAdminLayout(await renderAdminCatalogue(), '/admin/catalogue'),
+    '/admin/finance': async () => renderAdminLayout(await renderAdminFinance(), '/admin/finance'),
+    '/admin/users': async () => renderAdminLayout(await renderAdminUsers(), '/admin/users'),
+    '/admin/schemes': async () => renderAdminLayout(await renderAdminSchemes(), '/admin/schemes'),
+    '/admin/config': async () => renderAdminLayout(await renderAdminConfig(), '/admin/config'),
+
+    '/order-school': () => renderOrder('school'),
+    '/order-distributor': () => renderOrder('distributor'),
+
+    '/forbusiness': renderForBusiness,
+    '/business-opportunity': renderBusinessLanding,
+    '/new-schools': renderSchoolsLanding,
+    '/distributors': renderDistributorsLanding,
+    '/about': renderAbout,
+    '/contact': renderContact,
+    '/404': async () => '<h1>404 - Page Not Found</h1>'
+};
+
+// Initialize App
+document.addEventListener('DOMContentLoaded', () => {
+    // Render Shell
+    document.getElementById('header').innerHTML = renderHeader();
+    document.getElementById('footer').innerHTML = renderFooter();
+
+    // Initialize header interactions
+    initHeader();
+
+    // Initialize Router
+    const router = new Router(routes);
+
+    // Initialize Global Components
+    initFlyout();
+
+    // Global Event Listeners
+    setupGlobalListeners();
+
+    // Layout Manager
+    window.addEventListener('routeChanged', (e) => {
+        const path = e.detail.path;
+        const header = document.getElementById('header');
+        const footer = document.getElementById('footer');
+
+        // ROUTE PROTECTION - Check if user can access this route
+        if (!protectRoute(path)) {
+            return; // protectRoute handles redirect
+        }
+
+        // Re-render header to reflect auth state changes
+        header.innerHTML = renderHeader();
+        initHeader();
+
+        // Visibility Logic
+        // 1. Header: Hide only on Admin and Partner Dashboards
+        const shouldHideHeader = path === '/dashboard' ||
+            path.startsWith('/partner/') ||
+            path.startsWith('/admin') ||
+            path === '/portal-select' ||
+            path === '/login' ||
+            path === '/student-login' ||
+            path === '/partner-register' ||
+            path === '/student-register' ||
+            path === '/register';
+
+        // 2. Footer: Hide only on Portal Apps
+        const shouldHideFooter = path === '/dashboard' ||
+            path.startsWith('/partner/') ||
+            path.startsWith('/admin') ||
+            path === '/portal-select' ||
+            path === '/login' ||
+            path === '/student-login' ||
+            path === '/partner-register' ||
+            path === '/student-register' ||
+            path === '/register' ||
+            path === '/flip-book';
+
+        header.style.display = shouldHideHeader ? 'none' : 'block';
+        footer.style.display = shouldHideFooter ? 'none' : 'block';
+
+        // Adjust body padding
+        document.body.style.paddingTop = shouldHideHeader ? '0' : '';
+
+        // Page-specific initializers (run after route content is in the DOM)
+        setTimeout(() => {
+            if (path === '/' || path === '') {
+                initHome();
+            }
+        }, 50);
+    });
+});
+
+// Global Event Listeners
+function setupGlobalListeners() {
+    // Other global listeners can be added here
+}
+
+// Order Type Modal Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('order-type-modal');
+    if (!modal) return; // Guard clause
+
+    const overlay = document.getElementById('overlay');
+    const closeBtn = modal.querySelector('.close-modal');
+    const options = modal.querySelectorAll('.order-option');
+
+    function openModal() {
+        modal.classList.add('active');
+        overlay.classList.add('active');
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+        // Only remove overlay active if flyout is not active
+        if (!document.getElementById('book-detail-flyout').classList.contains('active')) {
+            overlay.classList.remove('active');
+        }
+    }
+
+    window.addEventListener('openOrderModal', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            const type = option.dataset.type;
+            closeModal();
+            // Close flyout as well
+            document.getElementById('book-detail-flyout').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+
+            window.location.hash = `/order-${type}`;
+        });
+    });
+});

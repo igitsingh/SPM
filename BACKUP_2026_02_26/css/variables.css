@@ -1,0 +1,69 @@
+:root {
+    /* Colors */
+    /* Colors - Suman Prakashan Mandir Portal Palette */
+    /* UPDATED: Blue Theme as Primary */
+    --primary: #1565c0;
+    /* Blue 800 */
+    --primary-light: #1976d2;
+    /* Blue 700 */
+    --primary-dark: #0d47a1;
+    /* Blue 900 */
+
+    --secondary: #f9a825;
+    /* Gold Accent (Active) */
+    --secondary-accent: #ff6f00;
+    /* Amber Dark */
+
+    --color-yellow: #ffca28;
+    --color-green: #2e7d32;
+    --color-beige: #fdf6e3;
+    --color-red: #c62828;
+
+    --bg-body: #f5f7fa;
+    /* Cool Grey/White for modern feel */
+    --bg-card: #ffffff;
+    --bg-glass: rgba(255, 255, 255, 0.95);
+    --bg-sidebar: #ffffff;
+
+    --text-main: #1a237e;
+    /* Deep Blue/Black Text */
+    --text-muted: #546e7a;
+    /* Blue Grey */
+    --text-light: #90a4ae;
+
+    --border-color: #e3f2fd;
+    /* Very light blue border */
+    --border-focus: #1565c0;
+
+    --border-light: #e1f5fe;
+    --shadow-sm: 0 2px 4px rgba(13, 71, 161, 0.05);
+    --shadow-md: 0 4px 12px rgba(13, 71, 161, 0.08);
+    --shadow-lg: 0 8px 24px rgba(13, 71, 161, 0.12);
+    --shadow-hover: 0 12px 32px rgba(21, 101, 192, 0.15);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #1e88e5 0%, #1565c0 100%);
+    --gradient-rainbow: linear-gradient(90deg, #1e88e5, #1565c0, #0d47a1);
+    --gradient-soft: linear-gradient(180deg, #ffffff 0%, #e3f2fd 100%);
+
+    /* Typography */
+    --font-main: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Spacing */
+    --radius-sm: 4px;
+    /* Sharper corners for heritage feel */
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-full: 9999px;
+
+    --container-width: 95%;
+    --header-height: 76px;
+}
+
+/* Dark Mode Support (Optional but good for premium feel) */
+@media (prefers-color-scheme: dark) {
+    /* Keeping it light/colorful as per "child-friendly" request, 
+       but defining these just in case we want a toggle later.
+       For now, forcing the light/bright theme as primary. */
+}
