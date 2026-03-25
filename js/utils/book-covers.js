@@ -46,7 +46,7 @@ const COVER_MAP = {
     'Disney Publication': {
         'Hindi': 'disney_hindi.png',
         'Mathematics': 'disney_maths.png',
-        'English': 'disney_hindi.png',
+        'English': 'aroma_english.png', // Temporary fallback to Aroma English until Disney English is available
         'Social Studies': 'disney_social.png',
         'Science': 'disney_maths.png',
         'GK': 'disney_social.png',

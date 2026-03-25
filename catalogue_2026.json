@@ -2213,7 +2213,8 @@
       "price": 280,
       "combo": false,
       "nep_compliant": true,
-      "isActive": true
+      "isActive": true,
+      "image": "/public/images/books/disney/disney_hindi_1.jpg"
     },
     {
       "unit": "Disney Publication",
@@ -2225,7 +2226,8 @@
       "price": 295,
       "combo": false,
       "nep_compliant": true,
-      "isActive": true
+      "isActive": true,
+      "image": "/public/images/books/disney/disney_hindi_2.jpg"
     },
     {
       "unit": "Disney Publication",
@@ -2237,7 +2239,8 @@
       "price": 325,
       "combo": false,
       "nep_compliant": true,
-      "isActive": true
+      "isActive": true,
+      "image": "/public/images/books/disney/disney_hindi_3.jpg"
     },
     {
       "unit": "Disney Publication",
@@ -2249,7 +2252,8 @@
       "price": 340,
       "combo": false,
       "nep_compliant": true,
-      "isActive": true
+      "isActive": true,
+      "image": "/public/images/books/disney/disney_hindi_4.jpg"
     },
     {
       "unit": "Disney Publication",
@@ -2261,7 +2265,8 @@
       "price": 350,
       "combo": false,
       "nep_compliant": true,
-      "isActive": true
+      "isActive": true,
+      "image": "/public/images/books/disney/disney_hindi_5.jpg"
     },
     {
       "unit": "Disney Publication",
@@ -2309,7 +2314,8 @@
       "price": 240,
       "combo": false,
       "nep_compliant": true,
-      "isActive": true
+      "isActive": true,
+      "image": "/public/images/books/disney/disney_hindi_grammar_1.jpg"
     },
     {
       "unit": "Disney Publication",
@@ -2369,7 +2375,8 @@
       "price": 280,
       "combo": false,
       "nep_compliant": true,
-      "isActive": true
+      "isActive": true,
+      "image": "/public/images/books/disney/disney_english_1.jpg"
     },
     {
       "unit": "Disney Publication",
@@ -2381,7 +2388,8 @@
       "price": 295,
       "combo": false,
       "nep_compliant": true,
-      "isActive": true
+      "isActive": true,
+      "image": "/public/images/books/disney/disney_english_2.jpg"
     },
     {
       "unit": "Disney Publication",
@@ -2393,7 +2401,8 @@
       "price": 325,
       "combo": false,
       "nep_compliant": true,
-      "isActive": true
+      "isActive": true,
+      "image": "/public/images/books/disney/disney_english_3.jpg"
     },
     {
       "unit": "Disney Publication",
@@ -2405,7 +2414,8 @@
       "price": 340,
       "combo": false,
       "nep_compliant": true,
-      "isActive": true
+      "isActive": true,
+      "image": "/public/images/books/disney/disney_english_4.jpg"
     },
     {
       "unit": "Disney Publication",
@@ -2417,7 +2427,8 @@
       "price": 350,
       "combo": false,
       "nep_compliant": true,
-      "isActive": true
+      "isActive": true,
+      "image": "/public/images/books/disney/disney_english_5.jpg"
     },
     {
       "unit": "Disney Publication",
@@ -2465,7 +2476,8 @@
       "price": 240,
       "combo": false,
       "nep_compliant": true,
-      "isActive": true
+      "isActive": true,
+      "image": "/public/images/books/disney/disney_english_grammar_1.jpg"
     },
     {
       "unit": "Disney Publication",
@@ -2525,7 +2537,8 @@
       "price": 280,
       "combo": false,
       "nep_compliant": true,
-      "isActive": true
+      "isActive": true,
+      "image": "/public/images/books/disney/disney_science_1.jpg"
     },
     {
       "unit": "Disney Publication",
@@ -2561,7 +2574,8 @@
       "price": 330,
       "combo": false,
       "nep_compliant": true,
-      "isActive": true
+      "isActive": true,
+      "image": "/public/images/books/disney/science__6-8-4.jpg"
     },
     {
       "unit": "Disney Publication",
@@ -2573,7 +2587,8 @@
       "price": 350,
       "combo": false,
       "nep_compliant": true,
-      "isActive": true
+      "isActive": true,
+      "image": "/public/images/books/disney/science__6-8-5.jpg"
     },
     {
       "unit": "Disney Publication",
@@ -2585,7 +2600,8 @@
       "price": 280,
       "combo": false,
       "nep_compliant": true,
-      "isActive": true
+      "isActive": true,
+      "image": "/public/images/books/disney/disney_social_1.jpg"
     },
     {
       "unit": "Disney Publication",
@@ -2645,7 +2661,8 @@
       "price": 415,
       "combo": false,
       "nep_compliant": true,
-      "isActive": true
+      "isActive": true,
+      "image": "/public/images/books/disney/disney_maths_1.jpg"
     },
     {
       "unit": "Disney Publication",
@@ -2705,7 +2722,8 @@
       "price": 190,
       "combo": false,
       "nep_compliant": true,
-      "isActive": true
+      "isActive": true,
+      "image": "/public/images/books/disney/disney_gk_1.jpg"
     },
     {
       "unit": "Disney Publication",
@@ -3654,6 +3672,71 @@
       "combo": false,
       "nep_compliant": true,
       "isActive": false
+    },
+    {
+      "unit": "Disney Publication",
+      "category": "Science",
+      "subject": "Science",
+      "code": "D-055",
+      "title": "Quantum - 6",
+      "class": "6",
+      "price": 400,
+      "combo": false,
+      "nep_compliant": true,
+      "isActive": true,
+      "image": "/public/images/books/disney/science__6-8-1.jpg"
+    },
+    {
+      "unit": "Disney Publication",
+      "category": "Science",
+      "subject": "Science",
+      "code": "D-056",
+      "title": "Quantum - 7",
+      "class": "7",
+      "price": 415,
+      "combo": false,
+      "nep_compliant": true,
+      "isActive": true,
+      "image": "/public/images/books/disney/science__6-8-2.jpg"
+    },
+    {
+      "unit": "Disney Publication",
+      "category": "Science",
+      "subject": "Science",
+      "code": "D-057",
+      "title": "Quantum - 8",
+      "class": "8",
+      "price": 430,
+      "combo": false,
+      "nep_compliant": true,
+      "isActive": true,
+      "image": "/public/images/books/disney/science__6-8-3.jpg"
+    },
+    {
+      "unit": "Disney Publication",
+      "category": "Science",
+      "subject": "Science",
+      "code": "D-058",
+      "title": "Quantum - 9",
+      "class": "9",
+      "price": 445,
+      "combo": false,
+      "nep_compliant": true,
+      "isActive": true,
+      "image": "/public/images/books/disney/science__6-8-4.jpg"
+    },
+    {
+      "unit": "Disney Publication",
+      "category": "Science",
+      "subject": "Science",
+      "code": "D-059",
+      "title": "Quantum - 10",
+      "class": "10",
+      "price": 460,
+      "combo": false,
+      "nep_compliant": true,
+      "isActive": true,
+      "image": "/public/images/books/disney/science__6-8-5.jpg"
     }
   ]
 }

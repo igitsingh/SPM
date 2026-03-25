@@ -14,18 +14,25 @@ export function renderBookCard(book) {
     const originalPrice = Math.round(book.price * (100 / (100 - discount)));
 
     // ── Resolve cover image ──────────────────────────────────────────────────
+    // Prioritize specific book image if it exists, otherwise resolve from unit/subject map
+    const specificImage = book.image && !book.image.includes('placeholder.com') ? book.image : null;
     const generatedCover = getCoverImage(book.unit, book.subject, book.category);
+    const coverUrl = specificImage || generatedCover;
     const gradient = getUnitGradient(book.unit);
 
     // Build the cover element: real image if found, gradient + title if not
     let coverContent;
-    if (generatedCover) {
+    if (coverUrl) {
         coverContent = `
-            <img src="${generatedCover}"
+            <img src="${coverUrl}"
                  alt="${book.title}"
                  loading="lazy"
-                 style="width:100%;height:100%;object-fit:cover;"
-                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="book-cover-fallback" style="display:none;width:100%;height:100%;background:${gradient};flex-direction:column;align-items:center;justify-content:center;padding:16px;text-align:center;"><div style="font-size:2.5rem;margin-bottom:10px;"></div><div style="font-size:0.75rem;font-weight:700;color:rgba(255,255,255,.9);line-height:1.3;">${book.title}</div></div>
+                 style="width:100%;height:100%;object-fit:cover;object-position:right center;"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="book-cover-fallback" style="display:none;width:100%;height:100%;background:${gradient};flex-direction:column;align-items:center;justify-content:center;padding:16px;text-align:center;">
+                <div style="font-size:2.5rem;margin-bottom:10px;"></div>
+                <div style="font-size:0.75rem;font-weight:700;color:rgba(255,255,255,.9);line-height:1.3;">${book.title}</div>
+            </div>
         `;
     } else {
         // No generated cover yet — styled gradient placeholder
