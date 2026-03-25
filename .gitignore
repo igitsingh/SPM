@@ -8,5 +8,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 dev.db
-spm-backend/dist/
-spm-backend/node_modules/
+spm-backend/pg_data_new/
+SPM_Backup_Latest/
+BACKUP_2026_*
+backups/
