@@ -10,3 +10,5 @@ spm-backend/node_modules
 assets/3D FOR SPM
 assets/DISNEY BOOK COVERS
 spm-backend
+package.json
+package-lock.json
