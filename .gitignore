@@ -12,3 +12,5 @@ spm-backend/pg_data_new/
 SPM_Backup_Latest/
 BACKUP_2026_*
 backups/
+.vercel
+.env*.local
