@@ -1,0 +1,8 @@
+node_modules
+.git
+.env.local
+.vercel
+BACKUP_*
+SPM_Backup_Latest
+backups
+spm-backend/node_modules
